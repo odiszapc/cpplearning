@@ -1,0 +1,10 @@
+SET(CMAKE_BUILD_TYPE Debug)
+project(cpplearning)
+cmake_minimum_required(VERSION 2.8)
+aux_source_directory(. SRC_LIST)
+file(GLOB_RECURSE SRC *.cpp *.h)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+
+SET(GCC_COVERAGE_COMPILE_FLAGS "-Wall -std=c++14")
+SET(CMAKE_VERBOSE_MAKEFILE 1)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
